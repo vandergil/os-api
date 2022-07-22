@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 import com.vander.os.domain.Cliente;
 import com.vander.os.domain.OS;
 import com.vander.os.domain.Tecnico;
-import com.vander.os.domain.enuns.Prioridade;
-import com.vander.os.domain.enuns.Status;
 import com.vander.os.dtos.OSDTO;
 import com.vander.os.repositories.OSRepository;
 import com.vander.os.service.exceptions.ObjectNotFoundException;
@@ -53,8 +51,8 @@ public class OSService {
 		OS newObj = new OS();
 		newObj.setId(obj.getId());
 		newObj.setObervacoes(obj.getObervacoes());
-		newObj.setPrioridade(Prioridade.toEnum(obj.getPrioridade()));
-		newObj.setStatus(Status.toEnum(obj.getStatus()));
+		newObj.setPrioridade(obj.getPrioridade());
+		newObj.setStatus(obj.getStatus());
 		
 		Tecnico tec = tecnicoService.findById(obj.getTecnico());
 		Cliente cli = clienteService.findById(obj.getCliente());
