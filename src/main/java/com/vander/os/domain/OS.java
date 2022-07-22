@@ -27,7 +27,7 @@ public class OS {
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dataFechamento;
 	private Integer prioridade;
-	private String obervacoes;
+	private String observacoes;
 	private Integer status;
 	
 	@ManyToOne
@@ -45,12 +45,12 @@ public class OS {
 		this.setStatus(Status.ABERTO);
 	}
 
-	public OS(Integer id, Prioridade prioridade, String obervacoes, Status status, Tecnico tecnico, Cliente cliente) {
+	public OS(Integer id, Prioridade prioridade, String observacoes, Status status, Tecnico tecnico, Cliente cliente) {
 		super();
 		this.id = id;
 		this.setDataAbertura(LocalDateTime.now());
 		this.prioridade = (prioridade == null) ? 0 : prioridade.getCod();
-		this.obervacoes = obervacoes;
+		this.observacoes = observacoes;
 		this.status = (status == null) ? 0 : status.getCod();
 		this.tecnico = tecnico;
 		this.cliente = cliente;
@@ -88,12 +88,12 @@ public class OS {
 		this.prioridade = prioridade.getCod();
 	}
 
-	public String getObervacoes() {
-		return obervacoes;
+	public String getObservacoes() {
+		return observacoes;
 	}
 
-	public void setObervacoes(String obervacoes) {
-		this.obervacoes = obervacoes;
+	public void setObservacoes(String observacoes) {
+		this.observacoes = observacoes;
 	}
 
 	public Status getStatus() {

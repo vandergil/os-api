@@ -25,7 +25,7 @@ public class OSDTO implements Serializable{
 	private Integer prioridade;
 	
 	@NotEmpty(message = "O campo OBSERVAÇÕES é requerido!")
-	private String obervacoes;
+	private String observacoes;
 	private Integer status;	
 	private Integer tecnico;
 	private Integer cliente;
@@ -40,7 +40,7 @@ public class OSDTO implements Serializable{
 		this.dataAbertura = obj.getDataAbertura();
 		this.dataFechamento = obj.getDataFechamento();
 		this.prioridade = obj.getPrioridade().getCod();
-		this.obervacoes = obj.getObervacoes();
+		this.observacoes = obj.getObservacoes();
 		this.status = obj.getStatus().getCod();
 		this.tecnico = obj.getTecnico().getId();
 		this.cliente = obj.getCliente().getId();
@@ -78,12 +78,12 @@ public class OSDTO implements Serializable{
 		this.prioridade = prioridade;
 	}
 
-	public String getObervacoes() {
-		return obervacoes;
+	public String getObservacoes() {
+		return observacoes;
 	}
 
-	public void setObervacoes(String obervacoes) {
-		this.obervacoes = obervacoes;
+	public void setObservacoes(String observacoes) {
+		this.observacoes = observacoes;
 	}
 
 	public Status getStatus() {
